@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤러리과제풀이</title>
+    <style>
+        #wrapper {
+            width: 600px;
+            height: 500px;
+            background: yellow;
+            margin: auto;
+    
+        }
+
+        #side {
+            width: 50px;
+            height: 100%;
+            background: aqua;
+            float: left;
+            text-align: center;
+
+        }
+        #content {
+            width: 550px;
+            height: 100%;
+            background: pink;
+            float: left;
+        }
+        #header {
+            width: 100%;
+            height: 450px;
+            background: rebeccapurple;
+        }
+        #footer {
+            width: 100%;
+            height: 50px;
+            background: blue;
+        }
+
+    </style>
+    <script>
+        //전역변수 선언시 약속: 코드라인 중간에 선언하지 않는다.
+        //왜?? 코드를 분석할때마다 변수를 찾아야 하니깐.. 코드량이 몇천줄
+        //이상되면 찾는거 포기해야 함..
+        let img; //갤러리의 큰 사진 이미지
+
+        function createImage() {
+            for (let i = 1; i <= 10; i++) {
+
+                let img = document.createElement("img");
+                img.src = "../images/m" + i + ".jpg";
+                img.style.width = 45 + "px";
+
+                let side = document.getElementById("side");
+                side.appendChild(img);
+            }
+            view();
+            //이전, 다음 버튼에 대해 클릭 이벤트 연결하기
+            //문서내의 bt_prev,
+            let bt_prev=document.getElementById("bt_prev");
+            let bt_next=document.getElementById("bt_next");
+        
+            bt_prev.addEventListener("click",function(){
+                //이전 사진 나오게 처리
+                console.log("이전 사진");
+            });
+
+            bt_next.addEventListener("click",function(){
+                //이전 사진 나오게 처리
+                console.log("다음 사진");
+
+                //문서내의 큰 사진(전역변수화 시킴) src값을 다음값으로 교체
+                img.src="../images/m2.jpg";
+            });
+        }
+        //큰 상세이미지 나오게
+        function view() {
+            //문서내의 header 요소에, 이미지중 첫번째 이미지를 생성하여 
+            //자식요소로 부착!!!
+            let img = document.createElement("img");
+            img.src = "../images/m1/jpg";
+            img.style.width = "100%";
+            img.style.height = "450px";
+
+
+
+
+            let header = document.getElementById("header");
+            header.appendChild(img); //자식요소를 img를 추가하기
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="wrapper">
+        <div id="side"></div>
+        <div id="content"></div>
+        <div id="header"></div>
+        <div id="footer">
+            <button id="bt_prev">◀</button>
+            <button id="by_next">▶</button>
+        </div>
+    </div>
+</body>
+
+</html>

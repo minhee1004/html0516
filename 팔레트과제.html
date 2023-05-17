@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팔레트과제</title>
+    <style>
+        #wrapper{
+            width: 600px;
+            height: 500px;
+            background: pink;
+            margin: auto;
+        }
+        #header{
+            width: 100%;
+            height: 50px;
+            background: wheat;
+            float: left;
+        }
+        #content{
+            width: 100%;
+            height: 450px;
+            background: orange;
+            float: left;
+            
+        
+        }
+    </style>
+
+    <script>
+    
+        let n=1;
+        
+
+        function init(){
+            for(let i=1;i<=7;i++){
+                document.createElement("background");
+                
+
+
+                let header=document.getElementById("header");
+                header.appendChild();
+            }
+            view();
+
+            let bt_red=document.getElementById("bt_red");
+            let bt_orange=document.getElementById("bt_orange");
+            let bt_yellow=document.getElementById("bt_yellow");
+            let bt_green=document.getElementById("bt_green");
+            let bt_blue=document.getElementById("bt_blue");
+            let bt_navy=document.getElementById("bt_navy");
+            let bt_violet=document.getElementById("bt_violet");
+        }
+        function view()
+           bg=document.createElement("background");
+           
+
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="bu_red"></div>
+            <div id="bu_orange"></div>
+            <div id="bu_yellow"></div>
+            <div id="bu_green"></div>
+            <div id="bu_blue"></div>
+            <div id="bt_navy"></div>
+            <div id="bt_violet"></div>
+        </div>
+        <div id="content"></div>
+    </div>
+</body>
+</html>
